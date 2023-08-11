@@ -1,29 +1,24 @@
 <template>
   <div>
-    {{ counter }}
- 
-    <div>
-      <p></p>
-      <button @click="pressAndDecrease()">-</button>
-      <button @click="pressAndIncrease()">+</button> 
-    </div>
+    <button @click="pressAndDecrease()">-</button>
+    <button @click="pressAndIncrease()">+</button> 
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { useStore } from 'vuex'
+import { computed } from 'vue'
 
-const previousCount = localStorage.getItem('key') || 0
-const counter = ref(previousCount)
+const store = useStore()
+
+const counter = computed(() => store.state.counter)
 
 const pressAndDecrease = () => {
-  counter.value--
-  localStorage.setItem('key', counter.value)
+  store.commit('decrement')
 }
 
 const pressAndIncrease = () => {
-  counter.value++
-  localStorage.setItem('key', counter.value)
+  store.commit('increment')
 }
 </script>
 

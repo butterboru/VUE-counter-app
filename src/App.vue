@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/page2">Another Page</router-link>
+    <router-link to="/">Increase or Decrease Here</router-link> |
+    <router-link to="/page2">View Current Number Here</router-link>
   </nav>
   <router-view/>
 </template>

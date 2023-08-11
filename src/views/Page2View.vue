@@ -5,9 +5,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { useStore } from 'vuex'
+import { computed } from 'vue'
 
-const previousCount = localStorage.getItem('key') || 0
-const counter = ref(previousCount)
+const store = useStore()
+
+const counter = computed(() => store.state.counter)
 
 </script>

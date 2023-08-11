@@ -1,9 +1,10 @@
 <template>
   <div>
-    <withButtons />
+    <with-buttons />
   </div>
 </template>
 
 <script setup>
-import withButtons from '@/components/CounterButton.vue'
+import WithButtons from '@/components/CounterButton.vue'
+
 </script>
